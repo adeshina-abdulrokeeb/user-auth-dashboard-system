@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script defer src="dashboard.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>MyApp</h2>
+      </div>
+      <nav class="nav">
+        <a href="#" class="active">🏠 Dashboard</a>
+        <a href="#">👤 Profile</a>
+        <a href="#">📊 Analytics</a>
+        <a href="#">📝 Tasks</a>
+        <a href="#">⚙️ Settings</a>
+        <a href="#" id="logoutDash">🚪 Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Topbar -->
+      <header class="topbar">
+        <button class="menu-toggle">☰</button>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+        </div>
+        <div class="topbar-right">
+          <span class="notif">🔔</span>
+          <span class="username" id="dashUsername">User</span>
+        </div>
+      </header>
+
+      <!-- Welcome Section -->
+      <section class="welcome-section">
+        <h1>Welcome back, <span id="welcomeName">User</span> 👋</h1>
+        <p>Here’s an overview of your account and activity.</p>
+      </section>
+
+      <!-- Stats Cards -->
+      <section class="stats-cards">
+        <div class="card">
+          <h3>Users</h3>
+          <p class="big">1,250</p>
+          <span>+5% this week</span>
+        </div>
+        <div class="card">
+          <h3>Revenue</h3>
+          <p class="big">$4,800</p>
+          <span>+12% this month</span>
+        </div>
+        <div class="card">
+          <h3>Tasks</h3>
+          <p class="big">34</p>
+          <span>5 pending</span>
+        </div>
+        <div class="card">
+          <h3>Notifications</h3>
+          <p class="big">7</p>
+          <span>2 new today</span>
+        </div>
+      </section>
+
+      <!-- Chart Section -->
+      <section class="chart-section">
+        <div class="chart-placeholder">
+          <h2>Performance Chart</h2>
+          <div class="fake-chart"></div>
+        </div>
+        <div class="chart-placeholder">
+          <h2>Activity Breakdown</h2>
+          <div class="fake-chart pie"></div>
+        </div>
+      </section>
+
+      <!-- Table Section -->
+      <section class="table-section">
+        <h2>Recent Activity</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Action</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Abdulrokeeb</td>
+              <td>Logged in</td>
+              <td>2025-10-06</td>
+              <td><span class="status success">Success</span></td>
+            </tr>
+            <tr>
+              <td>Feyisayo</td>
+              <td>Updated profile</td>
+              <td>2025-10-05</td>
+              <td><span class="status pending">Pending</span></td>
+            </tr>
+            <tr>
+              <td>Nifemi</td>
+              <td>Deleted user</td>
+              <td>2025-10-04</td>
+              <td><span class="status danger">Critical</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
