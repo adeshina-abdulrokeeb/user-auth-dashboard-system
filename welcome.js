@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (storedUsername) {
     displayUsername.textContent = storedUsername;
   } else {
-    window.location.href = "form.html";
+    window.location.href = "index.html";
   }
 
   document.getElementById("goToDashboard").addEventListener("click", () => {
@@ -14,6 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("logoutBtn").addEventListener("click", () => {
     localStorage.clear();
-    window.location.href = "form.html";
+    window.location.href = "index.html";
   });
 }); 
