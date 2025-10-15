@@ -24,6 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "index.html";
   });
 
+  // ===== THEME TOGGLE =====
+  const themeToggle = document.getElementById("themeToggle");
+  const body = document.body;
+
+  // Load stored theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    body.classList.add("dark-mode");
+    themeToggle.textContent = "☀️";
+  }
+
+  themeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    const isDark = body.classList.contains("dark-mode");
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  });
+
   // ===== CHARTS =====
   const performanceCtx = document.getElementById("performanceChart").getContext("2d");
   const activityCtx = document.getElementById("activityChart").getContext("2d");
