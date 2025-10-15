@@ -13,6 +13,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(135deg, #8e44ad, #9b59b6);
+  transition: background-color 0.4s ease, background 0.4s ease, color 0.4s ease;
 }
 
 .welcome-container {
@@ -24,6 +25,7 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.8s ease-in-out;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .welcome-image {
@@ -33,6 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   animation: slideInLeft 1s ease;
+  transition: background-color 0.4s ease;
 }
 
 .welcome-image img {
@@ -50,6 +53,7 @@ body {
   justify-content: center;
   color: #333;
   animation: slideInRight 1s ease;
+  transition: color 0.4s ease;
 }
 
 .welcome-content h1 {
@@ -57,6 +61,7 @@ body {
   margin-bottom: 10px;
   color: #8e44ad;
   word-wrap: break-word;
+  transition: color 0.4s ease;
 }
 
 .success-text {
@@ -110,6 +115,53 @@ button:hover {
   background-color: #c0392b;
 }
 
+/*THEME TOGGLE BUTTON*/
+#theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#theme-toggle:hover {
+  transform: rotate(15deg);
+}
+
+/*DARK MODE*/
+body.dark {
+  background: linear-gradient(135deg, #1e1e2f, #2a2a3d);
+  color: #f1f1f1;
+}
+
+body.dark .welcome-container {
+  background: #2a2a3d;
+  color: #f1f1f1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .welcome-image {
+  background: #1f1f2e;
+}
+
+body.dark .welcome-content h1 {
+  color: #a677d1;
+}
+
+body.dark #goToDashboard {
+  background-color: #a677d1;
+}
+
+body.dark #goToDashboard:hover {
+  background-color: #8e44ad;
+}
+
+body.dark .subtitle {
+  color: #ccc;
+}
+
 @media (max-width: 750px) {
   .welcome-container {
     flex-direction: column;
@@ -119,10 +171,6 @@ button:hover {
   .welcome-image,
   .welcome-content {
     width: 100%;
-  }
-
-  .welcome-image {
-    height: auto;
   }
 
   .welcome-content {
@@ -183,17 +231,36 @@ button:hover {
     height: 120px;
   }
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.97); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes slideInLeft {
-  from { transform: translateX(-50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slideInRight {
-  from { transform: translateX(50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
