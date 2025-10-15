@@ -6,7 +6,25 @@ const password2 = document.getElementById("password2");
 const strengthIndicator = document.getElementById("strength-indicator");
 const strengthText = document.getElementById("strength-text");
 const submitBtn = form.querySelector("button[type='submit']");
+const themeToggle = document.getElementById("theme-toggle");
 
+// ========== DARK MODE TOGGLE ==========
+document.addEventListener("DOMContentLoaded", () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    themeToggle.textContent = "☀️";
+  }
+});
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  const isDark = document.body.classList.contains("dark");
+  themeToggle.textContent = isDark ? "☀️" : "🌙";
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+});
+
+// ========== FORM VALIDATION ==========
 function showError(input, message) {
   const formControl = input.parentElement.classList.contains("password-wrapper")
     ? input.parentElement.parentElement
@@ -73,12 +91,9 @@ document.querySelectorAll(".toggle-password").forEach(toggle => {
   });
 });
 
-// Validation on blur (not while typing)
+// Validation listeners
 [username, email, password, password2].forEach(input => {
-  input.addEventListener("blur", () => {
-    validateForm();
-  });
-
+  input.addEventListener("blur", validateForm);
   input.addEventListener("input", () => {
     if (input === password) {
       checkPasswordStrength(password.value);
@@ -89,7 +104,6 @@ document.querySelectorAll(".toggle-password").forEach(toggle => {
 function validateForm() {
   let valid = true;
 
-  // Username
   if (username.value.trim() === "") {
     showError(username, "Username is required");
     valid = false;
@@ -97,7 +111,6 @@ function validateForm() {
     showSuccess(username);
   }
 
-  // Email
   if (email.value.trim() === "") {
     showError(email, "Email is required");
     valid = false;
@@ -108,7 +121,6 @@ function validateForm() {
     showSuccess(email);
   }
 
-  // Password
   if (password.value.trim() === "") {
     showError(password, "Password is required");
     valid = false;
@@ -119,7 +131,6 @@ function validateForm() {
     showSuccess(password);
   }
 
-  // Confirm Password
   if (password2.value.trim() === "") {
     showError(password2, "Please confirm your password");
     valid = false;

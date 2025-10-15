@@ -13,6 +13,7 @@ body {
   align-items: center;
   min-height: 100vh;
   background-color: #9b59b6;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .container {
@@ -22,6 +23,7 @@ body {
   width: 400px;
   max-width: 100%;
   padding: 20px;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .header {
@@ -53,7 +55,7 @@ body {
   font-size: 14px;
   padding: 10px;
   width: 100%;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .form-control input:focus {
@@ -138,9 +140,52 @@ button:hover:not(:disabled) {
   background-color: #732d91;
 }
 
-@media (max-width: 350px) {
-  .container {
-    width: 90%;
-    padding: 15px;
-  }
+#theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: rotate(15deg);
+}
+
+/* 🌙 DARK MODE */
+body.dark {
+  background-color: #1e1e2f;
+  color: #f1f1f1;
+}
+
+body.dark .container {
+  background-color: #2a2a3d;
+  color: #f1f1f1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .form-control input {
+  background-color: #3a3a50;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark .form-control input:focus {
+  border-color: #a677d1;
+  box-shadow: 0 0 5px rgba(166, 119, 209, 0.4);
+}
+
+body.dark .strength-bar {
+  background: #555;
+}
+
+body.dark button {
+  background-color: #a677d1;
+}
+
+body.dark button:hover:not(:disabled) {
+  background-color: #8e44ad;
 }
