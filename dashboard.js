@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== USERNAME DISPLAY =====
+  // Username display
   const storedUsername = localStorage.getItem("username");
   const dashUsername = document.getElementById("dashUsername");
   const welcomeName = document.getElementById("welcomeName");
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     welcomeName.textContent = storedUsername;
   }
 
-  // ===== SIDEBAR & MENU TOGGLE =====
+  // Sidebar and Menu toggle
   const menuToggle = document.querySelector(".menu-toggle");
   const sidebar = document.querySelector(".sidebar");
 
@@ -18,13 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.classList.toggle("active");
   });
 
-  // ===== LOGOUT =====
+  // Logout
   document.getElementById("logoutDash").addEventListener("click", () => {
     localStorage.clear();
     window.location.href = "index.html";
   });
 
-  // ===== THEME TOGGLE =====
+  // Theme toggle
   const themeToggle = document.getElementById("themeToggle");
   const body = document.body;
 
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 
-  // ===== CHARTS =====
+  // Charts
   const performanceCtx = document.getElementById("performanceChart").getContext("2d");
   const activityCtx = document.getElementById("activityChart").getContext("2d");
 

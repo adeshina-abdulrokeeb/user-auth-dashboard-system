@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "index.html";
   });
 
-  // 🌙 DARK MODE TOGGLE
+  // DARK MODE TOGGLE
   const themeToggle = document.getElementById("theme-toggle");
   const savedTheme = localStorage.getItem("theme");
 

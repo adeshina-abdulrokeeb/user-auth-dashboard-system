@@ -8,7 +8,7 @@ const strengthText = document.getElementById("strength-text");
 const submitBtn = form.querySelector("button[type='submit']");
 const themeToggle = document.getElementById("theme-toggle");
 
-// ========== DARK MODE TOGGLE ==========
+// Dark Mode Toggle
 document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
@@ -24,7 +24,7 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
-// ========== FORM VALIDATION ==========
+// Form Validation
 function showError(input, message) {
   const formControl = input.parentElement.classList.contains("password-wrapper")
     ? input.parentElement.parentElement

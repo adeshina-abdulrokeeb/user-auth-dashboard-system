@@ -156,7 +156,7 @@ button:hover:not(:disabled) {
   transform: rotate(15deg);
 }
 
-/* 🌙 DARK MODE */
+/* DARK MODE */
 body.dark {
   background-color: #1e1e2f;
   color: #f1f1f1;
